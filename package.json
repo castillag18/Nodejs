@@ -1,0 +1,20 @@
+{
+  "name": "Proyec_My",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.14",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.4"
+  }
+}
