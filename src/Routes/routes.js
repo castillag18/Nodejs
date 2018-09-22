@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
 router.post('/add', async (req, res) => {
     const task = new Task(req.body);     
     await task.save();
-    //alert($('input[name=tittle]'));
     res.redirect('/')
 
 
@@ -36,5 +35,23 @@ router.get('/delete/:id', async (req, res) => {
     await Task.remove({ _id: id })
     res.redirect('/')
 })
+
+router.post('/udpate/:id', async(req, res) =>{
+    const { id } = req.params
+    await Task.update({ _id: id}, req.body)
+    res.redirect('/')
+})
+
+router.get('/edit/:id', async (req,res) =>{
+    const { id } = req.params
+    const task = await Task.findById(id)
+   // console.log(task)
+    res.render('edit', {
+        task
+    })
+    //res.redirect('/')
+})
+
+
 
 module.exports = router;
