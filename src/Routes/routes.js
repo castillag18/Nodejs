@@ -34,9 +34,10 @@ router.get('/delete/:id', async (req, res) => {
     const { id } = req.params;
     await Task.remove({ _id: id })
     res.redirect('/')
+    console.log('hola')
 })
 
-router.post('/udpate/:id', async(req, res) =>{
+router.get('/update/:id', async(req, res) =>{
     const { id } = req.params
     await Task.update({ _id: id}, req.body)
     res.redirect('/')
@@ -49,8 +50,9 @@ router.get('/edit/:id', async (req,res) =>{
     res.render('edit', {
         task
     })
-    //res.redirect('/')
+    res.redirect('/')
 })
+
 
 
 

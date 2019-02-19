@@ -1,43 +1,57 @@
-
 <!--<pre>
     <%= task%>
 </pre>-->
-    
+<!--<div style="background-color:#8fe9aa;">
+    <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+-->
+        <!--<v:fill type="frame" src="D:\Copia de Seguridad (Mis Documentos)\Imagenes\Saved Pictures/1493108423_187483_1493108647_noticia_normal.jpg"
+            color="#7bceeb" />
+        <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+            <table height="100%" width="100%" cellpadding="0" border="0">
+                <tr>
+                    <td valign="top" aling="left" background="D:\Copia de Seguridad (Mis Documentos)\Imagenes\Saved Pictures/1493108423_187483_1493108647_noticia_normal.jpg"
+                        style="background-repeat:no-repeat; background-size:cover;">
+-->
+        
 
-       
-            <head>
-                    <meta charset="utf-8">
-                    <title>EDITAR</title> 
-                    <!--BOOTSTRAP 4-->
-                    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-                        crossorigin="anonymous">
-                
-                </head>
-                <nav class="navbar navbar-dark bg-dark mb-4">
-                    <a href="/" class="navbar-brand">EDITAR TAREA</a>
-                    
-                </nav>
-            
-            <div class="col-md-5 offset-md-3">
-              <div class="card">
-                  <div class="card-body">
-                      <form action="/udpate/<%= task._id %>" method="POST">
-                          <div class="form gruop">
-                              <input type="text" name="title" placeholder="Insert a Tittle" class="form-control" value="<%= task.title %>">
-                          </div>
-                          <br>
-                          <div class="form gruop">
-                              <textarea name="description" cols="80" class="form-control" placeholder="Insert a Description" ><%= task.description %></textarea>
-                          </div>
-                          <br>
-                          <button type="submit" class="btn btn-primary btn-block">
-                              ADD EDICION
-                          </button>
-                      </form>
-                  </div>
-              </div>
-            </div>
+                        <head>
+                            <meta charset="utf-8">
+                            <title>EDITAR</title>
+                            <!--BOOTSTRAP 4-->
+                            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+                                integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+                                crossorigin="anonymous">
 
-   
+                        </head>
+                        <nav class="navbar navbar-dark bg-dark mb-4">
+                            <a href="/" class="navbar-brand">EDITAR TAREA</a>
+
+                        </nav>
+
+                        <div class="col-md-5 offset-md-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form action="/update/<%= task._id %>" method="PUT">
+                                        <div class="form gruop">
+                                            <input type="text" name="title" placeholder="Insert a Tittle" class="form-control"
+                                                value="<%= task.title %>" required>
+                                        </div>
+                                        <br>
+                                        <div class="form gruop">
+                                            <textarea name="description" cols="80" class="form-control" placeholder="Insert a Description" required><%= task.description %></textarea>
+                                        </div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary btn-block">
+                                            ADD EDICION
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                   <!--</td>--> 
+               <!--</tr>--> 
+<!--</v:rect>
+</div>-->    
 
 <% include partials/_footer %>

@@ -1,65 +1,83 @@
 <% include partials/_header %>
 
 
-<div class="container">
-    <div class="row">
-        <!--form-->
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-body">
-                    <form action="/add" method="POST">
-                        <div class="form gruop">
-                            <input type="text" name="title" placeholder="Insert a Tittle" class="form-control">
-                        </div>
-                        <br>
-                        <div class="form gruop">
-                            <textarea name="description" cols="80" class="form-control" placeholder="Insert a Description"></textarea>
-                        </div>
-                        <br>
-                        <button type="submit" class="btn btn-primary btn-block">
-                            ADD
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!--list-->
-        <div class="col-md-7">
-            <table class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th> N°</th>
-                        <th> Tittle</th>
-                        <th> Description</th>
-                        <th> Operation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% for(var i = 0; i < tasks.length; i++) { %>
-                    <tr>
-                        <td>
-                            <%= i + 1 %>
-                        </td>
-                        <td>
-                            <%= tasks[i].title%>
-                        </td>
-                        <td>
-                            <%= tasks[i].description%>
-                        </td>
-                        <td>
-                            <a href="/cambiar/<%= tasks[i]._id %>" class="btn <%= tasks[i].status ? 'btn-success' : 'btn-dark' %>">
-                                Done
-                            </a>
-                            <a href="/delete/<%= tasks[i]._id%>" class="btn btn-danger">Delete</a>
-                            <a href="/edit/<%= tasks[i]._id%>" class="btn btn-info">Edit</a>
-                            <!--<a href="/Hello/<%= tasks[i]._id%>">No Oprimir</a> -->
-                        </td>
-                    </tr>
-                    <% } %>
-                </tbody>
-            </table>
-        </div>
-    </div>
 
+<div>
+   <!--<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+
+       
+        <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+            <table height="100%" width="100%" cellpadding="0" border="0">--> 
+               <!--<tr>--> 
+                    <!--<td valign="top" aling="left" background="D:\Copia de Seguridad (Mis Documentos)\Imagenes\Saved Pictures/1493108423_187483_1493108647_noticia_normal.jpg"
+                        style="background-repeat:no-repeat; background-size:cover;">-->
+
+                        <div class="container">
+                            <div class="row">
+                                <!--form-->
+                                <div class="col-md-5">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <form action="/add" method="POST" onsubmit="return  Validacion();">
+                                                <div class="form gruop">
+                                                    <input type="text" name="title" placeholder="Insert a Tittle" class="form-control" required>
+                                                </div>
+                                                <br>
+                                                <div class="form gruop">
+                                                    <textarea name="description" cols="80" class="form-control"
+                                                        placeholder="Insert a Description" required></textarea>
+                                                </div>
+                                                <br>
+                                                <button type="submit" class="btn btn-primary btn-block">
+                                                    ADD
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--list-->
+                                <div class="col-md-7">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th> N°</th>
+                                                <th> Tittle</th>
+                                                <th> Description</th>
+                                                <th> Operation</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% for(var i = 0; i < tasks.length; i++) { %>
+                                            <tr>
+                                                <td>
+                                                    <%= i + 1 %>
+                                                </td>
+                                                <td>
+                                                    <%= tasks[i].title%>
+                                                </td>
+                                                <td>
+                                                    <%= tasks[i].description%>
+                                                </td>
+                                                <td>
+                                                    <a href="/cambiar/<%= tasks[i]._id %>" class="btn <%= tasks[i].status ? 'btn-success' : 'btn-dark' %>">
+                                                        Done
+                                                    </a>
+                                                    <a href="/delete/<%= tasks[i]._id%>" class="btn btn-danger">Delete</a>
+                                                    <a href="/edit/<%= tasks[i]._id%>" class="btn btn-info">Edit</a>
+                                                    <!--<a href="/Hello/<%= tasks[i]._id%>">No Oprimir</a> -->
+                                                </td>
+                                            </tr>
+                                            <% } %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+
+                   <!--</td>--> 
+                <!--</tr>-->
+   <!--</v:rect>--> 
 </div>
+
 <% include partials/_footer %>
